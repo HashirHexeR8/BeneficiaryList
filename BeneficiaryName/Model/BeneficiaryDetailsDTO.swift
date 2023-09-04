@@ -48,7 +48,7 @@ class BeneficiaryAddress: Decodable {
     var firstLineMailing: String = "--"
     var scndLineMailing: String = ""
     var city: String = "--"
-    var zipCode: String = "--"
+    var zipCode: String = ""
     var stateCode: String = "--"
     var country: String = "--"
     
@@ -69,7 +69,7 @@ class BeneficiaryAddress: Decodable {
         self.firstLineMailing = try container.decodeIfPresent(String.self, forKey: .firstLineMailing) ?? "--"
         self.scndLineMailing = try container.decodeIfPresent(String.self, forKey: .scndLineMailing) ?? ""
         self.city = try container.decodeIfPresent(String.self, forKey: .city) ?? "--"
-        self.zipCode = try container.decodeIfPresent(String.self, forKey: .zipCode) ?? "--"
+        self.zipCode = try container.decodeIfPresent(String.self, forKey: .zipCode) ?? ""
         self.stateCode = try container.decodeIfPresent(String.self, forKey: .stateCode) ?? "--"
         self.country = try container.decodeIfPresent(String.self, forKey: .country) ?? "--"
     }
