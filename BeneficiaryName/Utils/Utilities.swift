@@ -8,6 +8,7 @@
 import Foundation
 
 struct Utilities {
+    /// Format date from given format to MMM d, yyyy
     static func formatDate(from dateStr: String) -> String {
         let fromFormatter = DateFormatter()
         fromFormatter.dateFormat = "MMddyyyy"

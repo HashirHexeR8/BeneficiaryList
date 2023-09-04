@@ -40,8 +40,11 @@ class BeneficiaryListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let selectedBenef = beneficiaryList[indexPath.row]
+        ///Adding a saparet check to show second line mailing address.
         let secondMailing = selectedBenef.beneficiaryAddress.scndLineMailing.isEmpty ? "" : "\n\(selectedBenef.beneficiaryAddress.scndLineMailing)"
+        ///Adding a check to either show postal or zip code.
         let zipPostalCode = selectedBenef.beneficiaryAddress.zipCode.isEmpty ? selectedBenef.beneficiaryAddress.stateCode : selectedBenef.beneficiaryAddress.zipCode
         let addressString = "\(selectedBenef.beneficiaryAddress.firstLineMailing)\(secondMailing)\n\(selectedBenef.beneficiaryAddress.city), \(selectedBenef.beneficiaryAddress.country), \(zipPostalCode)"
         let beneficiaryDetails = "SSN: \(selectedBenef.socialSecurityNumber)\nDate of Birth: \(Utilities.formatDate(from: selectedBenef.dateOfBirth))\nPhone No: \(selectedBenef.phoneNumber)\nAddress: \(addressString)"
